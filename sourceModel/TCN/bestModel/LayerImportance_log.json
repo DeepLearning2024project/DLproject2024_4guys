@@ -1,0 +1,34 @@
+{
+    "hist_encoder.tcn.0.conv": {
+        "weight": 0.020718662121074493,
+        "bias": 0.021758050461274193
+    },
+    "hist_encoder.tcn.1.conv": {
+        "weight": 0.06173039381776194,
+        "bias": 0.02415294184063423
+    },
+    "hist_encoder.tcn.2.conv": {
+        "weight": 0.04931243200017684,
+        "bias": 0.03460630920569437
+    },
+    "hist_encoder.tcn.3.conv": {
+        "weight": 0.04461318825367774,
+        "bias": 0.04640246618255316
+    },
+    "hist_encoder.tcn.4.conv": {
+        "weight": 0.05176839902051447,
+        "bias": 0.06410638768781304
+    },
+    "context_adapter": {
+        "weight": 0.11541823376122234,
+        "bias": 0.18734790236120313
+    },
+    "mlp_decoder.layers.0": {
+        "weight": 0.009399924535537353,
+        "bias": 0.044654315931245414
+    },
+    "mlp_decoder.layers.3": {
+        "weight": 0.16422122218369714,
+        "bias": 0.05978917063592013
+    }
+}
