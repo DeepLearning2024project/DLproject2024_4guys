@@ -3,3 +3,11 @@
 
 🚩**News** 
 🚩(2024.10): The repositiory was built up.
+
+
+## 本项目文件夹架构（等待进一步补充完整）
+- data
+- figure
+- result
+- sourceModel
+- tb_logs
