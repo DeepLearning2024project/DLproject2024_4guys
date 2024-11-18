@@ -3,9 +3,8 @@
 
 ## 日志
 
-🚩**News** 
-🚩(2024.11.18): 整理整个项目的文件框架，写明注释以及说明
-🚩(2024.10): The repositiory was built up.
+🚩**News** (2024.11.18): 整理整个项目的文件框架，写明注释以及说明
+- 🚩(2024.10): The repositiory was built up.
 
 
 ## 项目介绍
