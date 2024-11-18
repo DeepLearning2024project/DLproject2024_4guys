@@ -24,9 +24,11 @@
 ### 文件夹架构（等待进一步补充完整）
 - data
   - `No.x`: 同一个型号的、不同个体的xx管的测试数据
-  - `rawdata.pkl`: 原始数据
+  - `rawdata.pkl`: 原始数据，存在两个列
+    - `y` : 电流（猜测）
+    - `ds`: 日期
   - `dailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，初步处理原始数据集
-  - `processDailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，将dailyData中的异常值替换为正态分布下的随机值后的数据集
+  - `processDailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，将`dailyData`中的异常值替换为正态分布下的随机值后的数据集
   - `ProcessData`: 未知
 
 - figure
