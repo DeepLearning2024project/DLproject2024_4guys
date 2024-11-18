@@ -7,10 +7,11 @@
 
 ## 本项目文件夹架构（等待进一步补充完整）
 - data
-  - `No.x`:
-  - `rawdata.pkl`: 原始数据，每个`No.x`文件夹下都有，代表着不同号的xxx的数据
+  - `No.x`: 代表着不同号的xxx的数据（待完善）
+  - `rawdata.pkl`: 原始数据
   - `dailyData.pkl`: 运行`DataPocess.ipyb`文件后生成
   - `processDailyData.pkl`: 运行`DataPocess.ipyb`文件后生成
+  - `ProcessData`: 未知
 
 - figure
 - result
