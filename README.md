@@ -17,3 +17,4 @@
 - result
 - sourceModel
 - tb_logs
+- `.gitignore`: 对于会在运行后生成的file，不需要把他上传到github。为避免上传时自动上传、导致将此类文件包含在内，应该将其文件路径包含在`.gitignore`文件中
