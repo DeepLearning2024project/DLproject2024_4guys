@@ -1,0 +1,29 @@
+\section{Related Work}
+\label{sec:Related_Work}
+%------------------------------------中文版相关工作---------------------------------------------
+%现今各类时间序列模型纷纷涌现，足以说明其在时间序列分析方面的重要性。
+
+%经典方法如ARIMA (Anderson & Kendall, 1976), Holt-Winter (Hyndman & Athanasopoulos, 2018)和 Facebook 的 Prophet  (Taylor & Letham, 2018)等，更倾向于使用统计方法。它们大多遵循一个前提，即时间变量（temporal variations）都是遵循某种预定义的模式变化的。然而，现实世界的时间序列变化往往更加丰富，总能超出预定义的模式的范围。因此，这些经典方法的实际适用性总是有限的。
+
+%也有大量的基于时间卷积网络 （TCN） [40， 5， 4， 35] 的工作。它们试图用因果卷积来模拟时间因果关系。这些深度预测模型将重点放递归连接、时间注意力或因果卷积，并通过这些对时间关系进行建模。（摘自autoformer）
+
+%近年来，许多深度网络模型，也逐渐被应用到时间序列建模。比如，递归神经网络（RNN）及其变种如长短期记忆网络（LSTM）和门控循环单元（GRU）。Transformers(Zhou et al., 2021;  Liu et al., 2021a; Wu et al., 2021; Zhou et al., 2022)也在时间序列预测方面获得了出色的表现，例如自然语言处理 [13， 8]、音频处理 [19] 甚至计算机视觉 [16， 27]。通过注意力机制，transformers model可以更好地发现时间点之间的依赖。（摘自timesnet）
+
+%在Transformers的基础上，Wu 等人提出了Autoformer，通过特有的 AutoCorrelation 机制，可以根据学习周期，捕获序列时间依赖性。为了应对错综复杂的时间模式，Autoformer 还提出了一种深度的分解架构，以获得输入序列的季节性和趋势部分。2023年，一种更加新颖的方法被提出来。（）团队提出的TimesNet，开创性地将 1D 时间序列转换到 2D 空间当中；并且，借助参数高效的起始块，能够从转换的 2D 张量中捕获关于时间的 2D 变化
+
+Nowadays, all kinds of time series models have emerged, which is enough to show its importance in time series analysis.
+
+Classic methods such as ARIMA (Anderson \& Kendall, 1976), Holt-Winter (Hyndman \& Athanasopoulos, 1976), 2018) and Facebook's Prophet (Taylor \& Letham, 2018), etc., prefer statistical methods. Most of them follow the premise that temporal variations follow some predefined pattern. However, real-world time series variations tend to be much richer and can always go beyond the range of predefined patterns. Therefore, the practical applicability of these classical methods is always limited.
+
+There is also a large body of work based on temporal convolutional Networks (TCN) [40, 5, 4, 35]. They try to model temporal causality with causal convolutions. These deep prediction models will focus on recurrent connections, temporal attention, or causal convolutions and model temporal relationships through these. (from autoformer)
+
+In recent years, many deep network models have been gradually applied to time series modeling. For example, Recurrent Neural networks (RNNS) and their variants such as Long Short-Term Memory (LSTM) and Gated Recurrent Units (GRUs). Transformers(Zhou et al., 2021;   Liu et al., 2021a;  Wu et al., 2021;  Zhou et al., 2022) have also achieved outstanding performance in time series prediction, such as natural language processing [13, 8], audio processing [19] and even computer vision [16, 27]. Through the attention mechanism, the transformers model can better discover the dependencies between time points. (from timesnet)
+
+Based on Transformers, Wu et al. proposed Autoformer, which can capture sequence temporal dependence according to the learning period through a unique AutoCorrelation mechanism. To cope with intricate temporal patterns, Autoformer also proposes a deep decomposition architecture to obtain the seasonal and trend parts of the input series. In 2023, a more novel approach was proposed. () TimesNet, the pioneering transformation of 1D time series into 2D space; Furthermore, with the help of parameter-efficient starting blocks, we are able to capture 2D changes with respect to time from the transformed 2D tensors
+
+%----------------------------------------一下是可以参考借鉴的------------------------------------------
+%timesnet
+%此外，为了处理错综复杂的时间模式，Autoformer还提出了一种深度分解架构，以获得输入序列的季节性和趋势部分。之后，FEDformer（周 et al.， 2022）采用专家混合设计来增强季节性趋势分解，并在频域内呈现稀疏的关注。与以前的方法不同，我们通过探索时间序列的多周期性来解开错综复杂的时间模式，并首次通过公认的计算机视觉主干捕获 2D 空间中的时间 2D 变化。 同样值得注意的是，与以前的方法不同，我们不再局限于特定的分析任务，并尝试为时间序列分析提出一个任务通用的基础模型。
+
+%-----------------------------------------------------------------------------------------------------------
+\subsection{Models for Time Series Forecasting}
