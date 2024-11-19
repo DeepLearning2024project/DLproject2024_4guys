@@ -6,14 +6,18 @@
 %六号电子元件包括持续128天内电流的大小，
 %七号电子元件包括持续139天内的电流大小，
 %八号电子元件包括持续109天内的电流大小。
-The dataset for this experiment was collected by our team at the Fifth Research Institute of the Ministry of Industry and Information Technology. The dataset includes six different types of electronic components, recording the current size and time during a continuous testing period. The training set consists of data collected from Component 4, containing 1,058 data points. Other datasets are used for testing and validation. 
+\section{Dataset Description}
 
-Since the final prediction is the lifespan of the electronic component in days, and the original dataset includes multiple measurements of the current within a single day, the data used for testing is divided by date. The current value for each day is calculated as the average of multiple measurements taken on that day. After processing, the datasets for the following components were obtained:
+The dataset for this experiment was collected by our team at the Fifth Research Institute of the Ministry of Industry and Information Technology. It includes six different types of electronic components, with recorded data capturing the current size and time over a continuous testing period. The training set consists of data from Component 4, containing 1,058 data points. Other datasets are used for testing and validation.
 
-- Component 3: Current measurements for 138 days.
-- Component 5: Current measurements for 139 days.
-- Component 6: Current measurements for 128 days.
-- Component 7: Current measurements for 139 days.
-- Component 8: Current measurements for 109 days.
+Since the final prediction targets the lifespan of electronic components in days, and the original dataset contains multiple current measurements within a single day, the data used for testing is divided by date. For each day, the current value is calculated as the average of all measurements taken on that day. After processing, the datasets for the components are as follows:
+\begin{itemize}
+    \item Component 3: Current measurements over 138 days.
+    \item Component 5: Current measurements over 139 days.
+    \item Component 6: Current measurements over 128 days.
+    \item Component 7: Current measurements over 139 days.
+    \item Component 8: Current measurements over 109 days.
+\end{itemize}
 
-This approach ensures that the data is structured for effective analysis of the components' lifespan.
+This data processing approach ensures that the datasets are structured appropriately for analyzing the lifespan of the components.
+
