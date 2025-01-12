@@ -1,0 +1,77 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ieeenat_fullname.bst
+Database file #1: main.bib
+You're missing a field name---line 178 of file main.bib
+ : 
+ : % author = {FirstName LastName},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 185 of file main.bib
+ : 
+ : % author = {FirstName LastName},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 192 of file main.bib
+ : 
+ : %author = {FirstName Alpher},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 202 of file main.bib
+ : 
+ : %author = {FirstName Alpher and  FirstName Fotheringham-Smythe},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 212 of file main.bib
+ : 
+ : %author = {FirstName Alpher and FirstName Fotheringham-Smythe and FirstName Gamow},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 222 of file main.bib
+ : 
+ : %author = {FirstName Alpher and FirstName Gamow},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 7 entries,
+            2708 wiz_defined-function locations,
+            720 strings with 7333 characters,
+and the built_in function-call counts, 3680 in all, are:
+= -- 321
+> -- 255
+< -- 2
++ -- 85
+- -- 78
+* -- 318
+:= -- 577
+add.period$ -- 22
+call.type$ -- 7
+change.case$ -- 47
+chr.to.int$ -- 7
+cite$ -- 14
+duplicate$ -- 157
+empty$ -- 262
+format.name$ -- 87
+if$ -- 763
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 7
+newline$ -- 43
+num.names$ -- 28
+pop$ -- 83
+preamble$ -- 1
+purify$ -- 40
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 122
+swap$ -- 21
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 77
+warning$ -- 0
+while$ -- 26
+width$ -- 0
+write$ -- 99
+(There were 6 error messages)
