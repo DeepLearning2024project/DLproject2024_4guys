@@ -1,8 +1,21 @@
 \section{Introduction}
 \label{sec:intro}
-% 时间序列预测已被广泛应用于经济规划、交通路况预测、天气预报、能源消耗以及疾病传播预测等方方面面。其中，一个醒目的需求是，将预测的时间延长到更长远的未来，这有利于超长期的规划和预警。因此，在本文中，我们研究了时间序列的长期预测问题。一些电子原件的寿命可长达数十年，然而一旦损坏，却可能是任何一个未知的时间。为了某一个具体的电子元件的寿命，我们必须对其现有的工作情况的数据进行分析，从而得到其在未来工作中最可能的寿命。在本文中，我们挑选了一类微波电子管作为研究对象。其在工作中有一个期望的电流值，随着时间的推移，在工作条件下，电流值将越来越低，直至低于期望电流值的90%，此时该电子管则被视为报废。
+% 时间序列预测已被广泛应用于经济规划、交通路况预测、天气预报、能源消耗以及疾病传播预测等方方面面。其中，一个醒目的需求是，将预测的时间延长到更长远的未来，这有利于超长期的规划和预警。
+% the forecasting task is extremely challenging under the long-term setting。现实世界的时间序列预测总是涉及到复杂的时间模式，其中各种各样的上升、下降、波动等变化，相互混合和重叠，使得对时间序列的建模变得非常困难。
+% 然而，借助深度模型强大的非线性建模能力，在深度学习领域，人们提出了许多的模型，来捕获现实世界中的时间序列数据中复杂的时间变化（把baseline引用在这里）。得益于自关注机制（），Transformers再对时间序列数据的长期以来关系的建模方面，有着很大的优势。
 
-Time series forecasting has been widely used in economic planning, traffic condition forecasting, weather forecasting, energy consumption and disease transmission forecasting. Among them, a striking need is to extend the forecast time into the longer future, which facilitates ultra-long-term planning and early warning. Therefore, in this paper, we study the problem of long-term forecasting for time series. The life of some electronic components can be as long as decades, but once damaged, it may be any unknown time. For the life of a specific electronic component, we must analyze the data of its existing working condition, so as to obtain its most likely life in future work. In this paper, we select a class of microwave tubes as the research object. It has a desired current value in the work, with the passage of time, under the working conditions, the current value will be lower and lower, until less than 90\% of the desired current value, at this time the tube is regarded as scrapped.
+% 在本文中，我们研究了时间序列的长期预测问题。一些电子原件的寿命可长达数十年，然而一旦损坏，却可能是任何一个未知的时间。为了某一个具体的电子元件的寿命，我们必须对其现有的工作情况的数据进行分析，从而得到其在未来工作中最可能的寿命。在本文中，我们挑选了一类微波电子管作为研究对象。其在工作中有一个期望的电流值（基准值），随着时间的推移，在工作条件下，电流值将越来越低，直至低于期望电流值的90%，此时该电子管则被视为报废。
+
+% 在本实验中，我们期望利用autoformer（引用），来取得比baseline更优良的性能。（autoformer的基本思想）autoformer沿用时间序列分析的标准方法，采用分解的思想来处理复杂的时间序列，提取出可预测的部分。但是，其引入了系相关机制，来代替原来的自关注，这种机制基于序列 的周期性来发现子序列的相似性，并从最底层的周期开始，逐步聚集相似的子序列，这种机制实现了长度为L的序列复杂度为O（LlogL），
+
+
+Time series forecasting has been widely used in economic planning, traffic condition forecasting, weather forecasting, energy consumption and disease spread forecasting. Among them, a striking need is to extend the forecast time into the longer future, which facilitates ultra-long-term planning and early warning.
+% the forecasting task is extremely challenging under the long-term setting. Real-world time series forecasting always involves complex temporal patterns in which a wide variety of changes, such as rises, falls, fluctuations, etc., blend and overlap with each other, making it very difficult to model the time series.
+However, many models have been proposed in the deep learning community to capture the complex temporal variability in real-world time series data (baseline is cited here), taking advantage of the powerful nonlinear modeling capabilities of deep models. Thanks to the self-attention mechanism (), Transformers have great advantages in modeling the long-term relationship of time series data.
+
+In this paper, we study the problem of long-term forecasting for time series. The life of some electronic components can be as long as decades, but once damaged, it may be any unknown time. For the life of a specific electronic component, we must analyze the data of its existing working condition, so as to obtain its most likely life in future work. In this paper, we select a class of microwave tubes as the research object. It has a desired current value (reference value) in the work, with the passage of time, under the working conditions, the current value will be lower and lower, until less than 90\% of the desired current value, at this time the tube is regarded as scrap.
+
+In this experiment, we expect autoformer (quote) to achieve better performance than baseline. (Basic idea of autoformer) autoformer follows the standard method of time series analysis and adopts the idea of decomposition to deal with complex time series and extract predictable parts. However, instead of the original self-attention mechanism, it introduces a correlation mechanism, which finds the similarity of subsequences based on the periodicity of the sequence, and gradually aggregates similar subsequences starting from the lowest period. This mechanism realizes that the complexity of the sequence of length L is O (LlogL).
 %-------------------------------------------------------------------------
 %\subsection{Language}
 %
