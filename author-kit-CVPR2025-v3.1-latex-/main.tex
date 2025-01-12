@@ -1,7 +1,8 @@
 % CVPR 2025 Paper Template; see https://github.com/cvpr-org/author-kit
 
 \documentclass[10pt,twocolumn,letterpaper]{article}
-
+\usepackage{graphicx}
+\usepackage{float}
 %%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
 % \usepackage{cvpr}              % To produce the CAMERA-READY version
 \usepackage[review]{cvpr}      % To produce the REVIEW version
@@ -26,12 +27,13 @@
 \def\confYear{2025}
 
 %%%%%%%%% TITLE - PLEASE UPDATE
-\title{\LaTeX\ Author Guidelines for \confName~Proceedings}
-
+%\title{\LaTeX\ Author Guidelines for \confName~Proceedings}
+%中期报告：时间序列预测——长周期预测
+\title{Interim Report: Time Series Forecasting - Long period forecasting}
 %%%%%%%%% AUTHORS - PLEASE UPDATE
-\author{First Author\\
-Institution1\\
-Institution1 address\\
+\author{First Author\\Zhenyu Lin
+Institution1\\South China Normal University
+Institution1 address\\lzy
 {\tt\small firstauthor@i1.org}
 % For a paper whose authors are all at the same institution,
 % omit the following lines up until the closing ``}''.
@@ -39,9 +41,9 @@ Institution1 address\\
 % just like the second author.
 % To save space, use either the email address or home page, not both
 \and
-Second Author\\
-Institution2\\
-First line of institution2 address\\
+Second Author\\lzy
+Institution2\\lzy
+First line of institution2 address\\lzy
 {\tt\small secondauthor@i2.org}
 }
 
@@ -50,8 +52,11 @@ First line of institution2 address\\
 \input{sec/0_abstract}    
 \input{sec/1_intro}
 \input{sec/2_related_work}
-\input{sec/2_formatting}
-\input{sec/3_finalcopy}
+\input{sec/summary_of_contribution}
+%\input{sec/2_formatting}
+\input{sec/dataset}
+\input{sec/innovation}
+%\input{sec/3_finalcopy}
 {
     \small
     \bibliographystyle{ieeenat_fullname}
@@ -60,5 +65,4 @@ First line of institution2 address\\
 
 % WARNING: do not forget to delete the supplementary pages from your submission 
 % \input{sec/X_suppl}
-
 \end{document}
