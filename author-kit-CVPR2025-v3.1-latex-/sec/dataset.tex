@@ -1,7 +1,9 @@
 \section{Data Set}
 \label{sec:dataset}
 
-各种周期规律的复杂的交织，是导致时间序列分析预测困难的重要因素，更不利于进行长期的时间序列预测。为了使得模型能够更好地学习到时间序列模型，我们需要对时间序列数据进行预处理。
+%各种周期规律的复杂的交织，是导致时间序列分析预测困难的重要因素，更不利于进行长期的时间序列预测。为了使得模型能够更好地学习到时间序列模型，我们需要对时间序列数据进行预处理。
+The intricate interweaving of various periodic patterns is a major factor contributing to the difficulty of time series analysis and forecasting, particularly for long-term predictions. To enable the model to better learn the characteristics of time series data, it is necessary to preprocess the time series data.
+
 
 \begin{figure}[H]
 	\centering
@@ -18,9 +20,13 @@
 
 
 \subsection{Dataset Description}
-本实验的数据集，由小组成员采集于工业和信息化部电子第五研究所，采集对象为六个不同类型的电子元器件（分别是三号到八号），采集的数据为特定的条件下，持续时间内电子元件的电流大小与时间。本实验的训练集为四号电子原件，总共包含1058个时间步数据；而其他数据集，则用于测试和验证。
 
-各个电子元件对应的时间序列数据，如下：
+%本实验的数据集，由小组成员采集于工业和信息化部电子第五研究所，采集对象为六个不同类型的电子元器件（分别是三号到八号），采集的数据为特定的条件下，持续时间内电子元件的电流大小与时间。本实验的训练集为四号电子原件，总共包含1058个时间步数据；而其他数据集，则用于测试和验证。
+The dataset used in this experiment was collected by the team members from the Fifth Research Institute of Electronics under the Ministry of Industry and Information Technology. The data collection focused on six different types of electronic components (labeled as components No. 3 to No. 8). The data collected include the current magnitude of the electronic components over time under specific conditions. The training set in this experiment is based on component No. 4, comprising a total of 1,058 time steps, while the other datasets are used for testing and validation.
+
+%各个电子元件对应的时间序列数据，如下：
+The time series data corresponding to each electronic component is as follows:
+
 \begin{itemize}
     \item Component 3: 138 time steps.
     \item Component 5: 139 time steps.
@@ -29,33 +35,41 @@
     \item Component 8: 109 time steps.
 \end{itemize}
 
-每个电子元件对应一个数据集，包含电流随着时间的数值，及其对应的时间步。
-
+%每个电子元件对应一个数据集，包含电流随着时间的数值，及其对应的时间步。
+Each electronic component corresponds to a dataset that includes the current values over time and their corresponding time steps.
 
 \subsection{Data Preprocessing}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/No.3diff} 
-	\caption{No.3 的时间序列数据的差分的可视化。图中每个点，代表原本数据集中的点与上一个点的差，反映了时间序列数据的随着时间将变化的程度。我们可以看到在发生突变的地方，对应的diff值都较大，而大部分的点都处在稍微比零更小的区域，符合元器件随着时间的变化，电流变小、寿命变短的情况}
+%	\caption{No.3 的时间序列数据的差分的可视化。图中每个点，代表原本数据集中的点与上一个点的差，反映了时间序列数据的随着时间将变化的程度。我们可以看到在发生突变的地方，对应的diff值都较大，而大部分的点都处在稍微比零更小的区域，符合元器件随着时间的变化，电流变小、寿命变短的情况}
+	\caption{The visualization of the differenced time series data for component No. 3 is shown below. Each point in the figure represents the difference between a data point in the original dataset and the previous point, reflecting the extent of change in the time series data over time. We can observe that at the points where abrupt changes occur, the corresponding difference values (diff) are relatively large, while most of the points are in an area slightly below zero. This aligns with the situation where the current decreases and the component's lifespan shortens as time progresses.}
 	\label{fig:No3_diff}
 	
 \end{figure}
 
 
-通过图\ref{fig:No3_original}，我们可以看到，由于检测环境的限制，测出来的电流数值的时间序列数据，具有明显的突变，这很可能是由于实验环境（比如测电流时钳子的松动等）而导致的突变，而非电子原件本身的变化。为了能够学习到真正的时间序列数据模型，我们需要对原本的电流数值的时间序列数据进行一定的预处理。
+%通过图\ref{fig:No3_original}，我们可以看到，由于检测环境的限制，测出来的电流数值的时间序列数据，具有明显的突变，这很可能是由于实验环境（比如测电流时钳子的松动等）而导致的突变，而非电子原件本身的变化。为了能够学习到真正的时间序列数据模型，我们需要对原本的电流数值的时间序列数据进行一定的预处理。
+As shown in Figure \ref{fig:No3_original}, we can observe that due to the limitations of the detection environment, the time series data of the measured current values exhibit obvious abrupt changes. These changes are likely caused by factors in the experimental environment (such as looseness of the clamp during current measurement), rather than changes in the electronic component itself. In order to learn the true time series data model, it is necessary to preprocess the original current time series data.
 
 
-接下来，我们将以3号电子元件为例子，介绍我们进行数据预处理的流程。
+%接下来，我们将以3号电子元件为例子，介绍我们进行数据预处理的流程。
+Next, we will use component No. 3 as an example to introduce the data preprocessing process.
 
-因为存在数值的突变（异常值），为了使得这部分异常值回归正常，我们需要对其进行差分处理（如图\ref{fig:No3_diff}所示）。经过差分之后可以看到，图中每个点，代表原本数据集中的点与上一个点的差，反映了时间序列数据的随着时间将变化的程度。发生突变的地方都对应着diff值较大的点；而大部分的点都处在稍微比零更小的区域，符合元器件随着时间的变化，电流变小、寿命变短的情况。
+%因为存在数值的突变（异常值），为了使得这部分异常值回归正常，我们需要对其进行差分处理（如图\ref{fig:No3_diff}所示）。经过差分之后可以看到，图中每个点，代表原本数据集中的点与上一个点的差，反映了时间序列数据的随着时间将变化的程度。发生突变的地方都对应着diff值较大的点；而大部分的点都处在稍微比零更小的区域，符合元器件随着时间的变化，电流变小、寿命变短的情况。
+Due to the presence of abrupt changes (outliers) in the data, in order to return these anomalous values to a normal range, we need to perform differencing (as shown in Figure \ref{fig:No3_diff}). After differencing, each point in the figure represents the difference between a data point in the original dataset and the previous point, reflecting the extent of change in the time series data over time. The places where abrupt changes occur correspond to points with large diff values, while most points are located in areas slightly below zero. This aligns with the phenomenon where, over time, the current decreases and the component's lifespan shortens.
 
-为了判断出哪些差分是不合理的（异常的），我们假设这些差分的分布符合正态分布。通过计算所有diff值的均值和方差，可以得到对应的正态分布（如图\ref{fig:No.3_Diff_and_Normal_Distribution}所示）。借助得到的正态分布，我们规定，将超过该正态分布95\%置信区间的diff值，视为异常值（见图\ref{fig:No.3_Abnormal_Value}），在后续的数据处理中进行剔除。我们利用得到的正态分布，随机模拟出一个更加合理的数值，并进行替换。
+
+%为了判断出哪些差分是不合理的（异常的），我们假设这些差分的分布符合正态分布。通过计算所有diff值的均值和方差，可以得到对应的正态分布（如图\ref{fig:No.3_Diff_and_Normal_Distribution}所示）。借助得到的正态分布，我们规定，将超过该正态分布95\%置信区间的diff值，视为异常值（见图\ref{fig:No.3_Abnormal_Value}），在后续的数据处理中进行剔除。我们利用得到的正态分布，随机模拟出一个更加合理的数值，并进行替换。
+To determine which differenced values are unreasonable (i.e., anomalous), we assume that the distribution of these differenced values follows a normal distribution. By calculating the mean and variance of all diff values, we can obtain the corresponding normal distribution (as shown in Figure \ref{fig:No.3_Diff_and_Normal_Distribution}). With this normal distribution, we define the diff values exceeding the 95\% confidence interval of the normal distribution as outliers (see Figure \ref{fig:No.3_Abnormal_Value}). These outliers will be removed in the subsequent data processing. We will then use the obtained normal distribution to randomly simulate a more reasonable value and replace the outliers accordingly.
+
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/No.3_Diff_and_Normal_Distribution} 
-	\caption{电流时间序列的差分的频次分布 以及 对应的正态分布图。可以看到大部分diff数值集中在林附近的区域，上下波动，只有少数数值处在变化较大的区间。我们将超过置信区间95\%的数据视为异常数据，并在下一步的数据处理中进行处理}
+%	\caption{电流时间序列的差分的频次分布 以及 对应的正态分布图。可以看到大部分diff数值集中在林附近的区域，上下波动，只有少数数值处在变化较大的区间。我们将超过置信区间95\%的数据视为异常数据，并在下一步的数据处理中进行处理}
+	\caption{Frequency Distribution of Current Time Series Differencing and the Corresponding Normal Distribution. It can be observed that most of the diff values are concentrated near zero, fluctuating slightly above and below it, with only a small number of values in regions with significant variation. We consider data points exceeding the 95\% confidence interval as anomalies, which will be addressed in the next step of data processing.}
 	\label{fig:No.3_Diff_and_Normal_Distribution}
 \end{figure}
 
@@ -63,13 +77,19 @@
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/No.3_Abnormal_Value} 
-	\caption{电流时间序列的差分的频次分布 以及 对应的正态分布图。可以看到大部分diff数值集中在林附近的区域，上下波动，只有少数数值处在变化较大的区间。我们将超过置信区间95\%的数据视为异常数据，并在下一步的数据处理中进行处理}
+%	\caption{电流时间序列的差分的频次分布 以及 对应的正态分布图。可以看到大部分diff数值集中在林附近的区域，上下波动，只有少数数值处在变化较大的区间。我们将超过置信区间95\%的数据视为异常数据，并在下一步的数据处理中进行处理}
+	\caption{Frequency Distribution of the Differenced Current Time Series and the Corresponding Normal Distribution. Most of the diff values are concentrated near zero, fluctuating slightly above and below this point, with only a small number of values falling in regions with significant variation. Data points exceeding the 95\% confidence interval are considered anomalous and will be addressed in the next step of data processing.}
+
 	\label{fig:No.3_Abnormal_Value}
 \end{figure}
 
-经过预处理之后，不符合要求的异常值已经被替换为符合分布数值，该数值为随机数，且符合该正态分布（如图\ref{fig:No.3_Corrected_and_Normal_Distribution}）。将其差分重新转换回电流数值的时间序列，即可得到处理过的数据（如图\ref{fig:No.3data_precessed}）。对比图\ref{fig:No3_original}此时已经不再有突变的异常值了。
+%经过预处理之后，不符合要求的异常值已经被替换为符合分布数值，该数值为随机数，且符合该正态分布（如图\ref{fig:No.3_Corrected_and_Normal_Distribution}）。将其差分重新转换回电流数值的时间序列，即可得到处理过的数据（如图\ref{fig:No.3data_precessed}）。对比图\ref{fig:No3_original}此时已经不再有突变的异常值了。
 
-其余的电子管，都按照相同的流程进行处理，最终得到所有预处理的数据。并且，我们将使用4号管，作为训练集。利用其对模型进行微调，最终得到的模型，再进行迁移学习，预测其它各个管的电子元器件的寿命。
+%其余的电子管，都按照相同的流程进行处理，最终得到所有预处理的数据。并且，我们将使用4号管，作为训练集。利用其对模型进行微调，最终得到的模型，再进行迁移学习，预测其它各个管的电子元器件的寿命。
+
+After preprocessing, the anomalous values that did not meet the requirements have been replaced with values that follow the normal distribution. These values are random numbers that conform to the normal distribution (as shown in Figure \ref{fig:No.3_Corrected_and_Normal_Distribution}). By reversing the differencing process and converting it back to the current time series data, we obtain the processed data (as shown in Figure \ref{fig:No.3data_precessed}). Compared to Figure \ref{fig:No3_original}, there are no longer any abrupt anomalous values.
+
+The same processing flow is applied to the other electronic components, resulting in the preprocessing of all datasets. Component No. 4 is used as the training set. We will fine-tune the model using this data and then apply transfer learning to predict the lifespan of electronic components for the other components.
 
 \begin{figure}[H]
 	\centering
