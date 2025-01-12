@@ -28,11 +28,10 @@
 - data
   - `No.x`: 同一个型号的、不同个体的xx管的测试数据
   - `rawdata.pkl`: 原始数据，存在两个列
-    - `y` : 电流（猜测）
+    - `y` : 电流
     - `ds`: 日期
   - `dailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，初步处理原始数据集
   - `processDailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，将`dailyData`中的异常值替换为正态分布下的随机值后的数据集
-  - `ProcessData`: 未知
 
 - figure
 - result
@@ -42,15 +41,12 @@
 - `.gitignore`: 对于会在运行后生成的file，不需要把他上传到github。为避免上传时自动上传、导致将此类文件包含在内，应该将其文件路径包含在`.gitignore`文件中
 
 ## 项目模型
-### 模型介绍： TimesNet
-- 模型代码：[TimesNet_tutorial.ipynb](https://github.com/thuml/Time-Series-Library/blob/main/tutorial/TimesNet_tutorial.ipynb)
-- 论文pdf：[论文pdf](https://openreview.net/pdf?id=ju_Uqw384Oq)
+
+
 
 ### 模型介绍： Autoformer
-- 模型代码/预训练模型：[huggingface/autoformer-tourism-monthly](https://huggingface.co/huggingface/autoformer-tourism-monthly)
-- [数据集](https://huggingface.co/datasets/Monash-University/monash_tsf)
+- 模型代码/预训练模型：[huggingface/MRNH/autoformer-ett-hourly]([(https://huggingface.co/MRNH/autoformer-ett-hourly)])
 
 
-### 模型获取途径
-- [TimesNet_tutorial.ipynb](https://github.com/thuml/Time-Series-Library/blob/main/tutorial/TimesNet_tutorial.ipynb)
+
 - 
