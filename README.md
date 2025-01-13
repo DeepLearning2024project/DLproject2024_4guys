@@ -23,30 +23,25 @@
 
 所以，我们的任务是，预测该微波电子管的电流变化，并判断何时下降10%，**则此下降10%的时间为其寿命**。
 为了让模型更好地学习到此时间序列的规律，我们需要大量的数据预处理工作
+我们在自定义数据集上对Autoformer模型进行了微调和优化，同时对比了其他传统模型LSTM、GRU、TCN等的预测性能。
 
 ### 文件夹架构（等待进一步补充完整）
-- data
-  - `No.x`: 同一个型号的、不同个体的xx管的测试数据
-  - `rawdata.pkl`: 原始数据，存在两个列
-    - `y` : 电流
-    - `ds`: 日期
-  - `dailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，初步处理原始数据集
-  - `processDailyData.pkl`: 运行`DataPocess.ipyb`文件后生成，将`dailyData`中的异常值替换为正态分布下的随机值后的数据集
-
-- figure
-- result
-- sourceModel
-- tb_logs
+- baseline(数据集以及传统模型）
+ - data:数据集
+ - sourceModel:传统模型
+ - DataProcess.igynb:数据处理代码
+ -  sourceModel.igynb:传统模型训练
+ -  TransferModel.igynb:传统模型测试
+- improved method(Autoformer模型训练及测试）
+ - autoformer.igynb:Autoformer模型训练及测试  
 - author-kit-CVPR2025-v3.1-latex-: latex模板
 - `.gitignore`: 对于会在运行后生成的file，不需要把他上传到github。为避免上传时自动上传、导致将此类文件包含在内，应该将其文件路径包含在`.gitignore`文件中
-
 ## 项目模型
-
-
 
 ### 模型介绍： Autoformer
 - 模型代码/预训练模型：[huggingface/MRNH/autoformer-ett-hourly]([(https://huggingface.co/MRNH/autoformer-ett-hourly)])
 
-
-
-- 
+## 使用方法
+- 下载并准备数据集：将数据集存储于dataset/文件夹。
+- 运行notebooks/文件夹中的代码，完成模型训练与测试。
+- 查看results/文件夹以获取实验结果与可视化图表。
