@@ -27,13 +27,13 @@
 
 ### 文件夹架构（等待进一步补充完整）
 - baseline(数据集以及传统模型）
- - data:数据集
- - sourceModel:传统模型
- - DataProcess.igynb:数据处理代码
- -  sourceModel.igynb:传统模型训练
- -  TransferModel.igynb:传统模型测试
+  -  data:数据集
+  -  sourceModel:传统模型
+  -  DataProcess.igynb:数据处理代码
+  -   sourceModel.igynb:传统模型训练
+  -   TransferModel.igynb:传统模型测试
 - improved method(Autoformer模型训练及测试）
- - autoformer.igynb:Autoformer模型训练及测试  
+  -  autoformer.igynb:Autoformer模型训练及测试  
 - author-kit-CVPR2025-v3.1-latex-: latex模板
 - `.gitignore`: 对于会在运行后生成的file，不需要把他上传到github。为避免上传时自动上传、导致将此类文件包含在内，应该将其文件路径包含在`.gitignore`文件中
 ## 项目模型
@@ -42,6 +42,5 @@
 - 模型代码/预训练模型：[huggingface/MRNH/autoformer-ett-hourly]([(https://huggingface.co/MRNH/autoformer-ett-hourly)])
 
 ## 使用方法
-- 下载并准备数据集：将数据集存储于dataset/文件夹。
-- 运行notebooks/文件夹中的代码，完成模型训练与测试。
-- 查看results/文件夹以获取实验结果与可视化图表。
+- 下载项目。
+- 运行对应igynb文件夹中的代码，完成模型训练与测试（需更改数据集路径）。
